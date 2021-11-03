@@ -32,6 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Add rubocop for guide styles
 gem 'rubocop'
+gem 'rubocop-discourse'
 gem 'rubocop-rails'
 gem 'rubocop-rspec'
 
