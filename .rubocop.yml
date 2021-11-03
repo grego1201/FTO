@@ -4,7 +4,8 @@ inherit_gem:
 AllCops:
   NewCops: enable
   Exclude:
-    - 'bin/bundle'
+    - vendor/bundle/**/*
+    - bin/**/*
 
 Style/Documentation:
   Enabled: false

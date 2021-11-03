@@ -1,10 +1,10 @@
-version: 2
+version: 2.1
 jobs:
   build:
     parallelism: 3
     working_directory: ~/circleci-demo-ruby-rails
     docker:
-      - image: cimg/ruby:3.0.2  # language image
+      - image: cimg/ruby:3.0.2-node
         environment:
           BUNDLER_VERSION: 2.0.1
           BUNDLE_JOBS: 3
@@ -38,6 +38,8 @@ jobs:
       - run:
           name: Tests
           command: bundle exec rspec
+
+      - run: ruby --version
 
       - run:
           name: Rubocop
