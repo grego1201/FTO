@@ -32,6 +32,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Add rubocop for guide styles
 gem 'rubocop'
+gem 'rubocop-rails'
+gem 'rubocop-rspec'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
