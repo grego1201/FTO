@@ -1,0 +1,30 @@
+<%= form_with model: competition do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :location %>
+    <%= form.text_field :location %>
+  </div>
+
+  <div>
+    <%= form.label :date %>
+    <%= form.date_select :date, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select(Competition::GENDERS, competition.gender), required: true %>
+  </div>
+
+  <div>
+    <%= form.label :category %>
+    <%= form.select :category, options_for_select(Competition::CATEGORIES, competition.category) %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
