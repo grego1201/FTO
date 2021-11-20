@@ -1,0 +1,13 @@
+<h1> Fencers </h1>
+
+<ul>
+  <% @fencers.each do |fencer| %>
+    <li>
+      <%= link_to "#{fencer.first_name} #{fencer.last_name}", fencer %>
+      <%= link_to "Edit", edit_fencer_path(fencer) %>
+      <%= link_to "Destroy", fencer_path(fencer),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>

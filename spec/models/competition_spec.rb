@@ -33,4 +33,9 @@ RSpec.describe Competition, type: :model do
     subject.category = 'Other category'
     expect(subject).to_not be_valid
   end
+
+  it 'should have and belongs to many fencers' do
+    t = described_class.reflect_on_association(:fencers)
+    expect(t.macro).to eq(:has_and_belongs_to_many)
+  end
 end
