@@ -1,0 +1,17 @@
+<%= link_to "Referee", referees_path %>
+
+<h1> <%= @referee.first_name%> <%= @referee.last_name%></h1>
+
+<ul>
+  <li> ID: <%= @referee.id %> </li>
+  <li> first_name: <%= @referee.first_name %> </li>
+  <li> last_name: <%= @referee.last_name %> </li>
+  <li> country: <%= @referee.country %> </li>
+</ul>
+
+<ul>
+  <li> <%= link_to "Edit", edit_referee_path(@referee) %> </li>
+  <li> <%= link_to "Destroy", referee_path(@referee),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %> </li>
+</ul>

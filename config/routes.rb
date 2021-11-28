@@ -5,4 +5,5 @@ Rails.application.routes.draw do
 
   resources :competitions
   resources :fencers
+  resources :referees
 end

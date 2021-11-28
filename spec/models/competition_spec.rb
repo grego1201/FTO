@@ -38,4 +38,9 @@ RSpec.describe Competition, type: :model do
     t = described_class.reflect_on_association(:fencers)
     expect(t.macro).to eq(:has_and_belongs_to_many)
   end
+
+  it 'should have and belongs to many referees' do
+    t = described_class.reflect_on_association(:referees)
+    expect(t.macro).to eq(:has_and_belongs_to_many)
+  end
 end
