@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_28_182458) do
+ActiveRecord::Schema.define(version: 2021_12_06_095127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +40,17 @@ ActiveRecord::Schema.define(version: 2021_11_28_182458) do
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "poules", force: :cascade do |t|
+    t.integer "number"
+    t.integer "piste"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "competition_id"
+    t.bigint "referee_id"
+    t.index ["competition_id"], name: "index_poules_on_competition_id"
+    t.index ["referee_id"], name: "index_poules_on_referee_id"
   end
 
   create_table "referees", force: :cascade do |t|

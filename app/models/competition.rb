@@ -6,6 +6,7 @@ class Competition < ApplicationRecord
 
   has_and_belongs_to_many :fencers
   has_and_belongs_to_many :referees
+  has_many :poules
 
   validates_presence_of :name, :date, :gender
   validates :gender, inclusion: { in: GENDERS, message: 'Gender not valid' }

@@ -1,0 +1,16 @@
+<%= link_to "Poules", poules_path %>
+
+<h1> <%= @poule.number %> </h1>
+
+<ul>
+  <li> ID: <%= @poule.id %> </li>
+  <li> number: <%= @poule.number %> </li>
+  <li> piste: <%= @poule.piste %> </li>
+</ul>
+
+<ul>
+  <li> <%= link_to "Edit", edit_poule_path(@poule) %> </li>
+  <li> <%= link_to "Destroy", poule_path(@poule),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %> </li>
+</ul>

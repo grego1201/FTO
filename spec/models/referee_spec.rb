@@ -25,4 +25,10 @@ RSpec.describe Referee, type: :model do
     t = described_class.reflect_on_association(:competitions)
     expect(t.macro).to eq(:has_and_belongs_to_many)
   end
+
+  it 'should have many poules' do
+    t = described_class.reflect_on_association(:poules)
+    expect(t.macro).to eq(:has_many)
+  end
+
 end

@@ -6,6 +6,7 @@ AllCops:
   Exclude:
     - vendor/bundle/**/*
     - bin/**/*
+    - db/**/*
 
 Style/Documentation:
   Enabled: false
