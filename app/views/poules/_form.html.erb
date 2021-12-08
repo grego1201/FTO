@@ -1,0 +1,15 @@
+<%= form_with model: poule do |form| %>
+  <div>
+    <%= form.label :number %>
+    <%= form.number_field :number, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :piste %>
+    <%= form.number_field :piste, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

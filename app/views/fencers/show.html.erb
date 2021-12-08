@@ -1,0 +1,19 @@
+<%= link_to "Fencers", fencers_path %>
+
+<h1> <%= @fencer.first_name%> <%= @fencer.last_name%></h1>
+
+<ul>
+  <li> ID: <%= @fencer.id %> </li>
+  <li> first_name: <%= @fencer.first_name %> </li>
+  <li> last_name: <%= @fencer.last_name %> </li>
+  <li> birthday: <%= @fencer.birthday %> </li>
+  <li> gender: <%= @fencer.gender %> </li>
+  <li> country: <%= @fencer.country %> </li>
+</ul>
+
+<ul>
+  <li> <%= link_to "Edit", edit_fencer_path(@fencer) %> </li>
+  <li> <%= link_to "Destroy", fencer_path(@fencer),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %> </li>
+</ul>

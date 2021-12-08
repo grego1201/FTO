@@ -1,0 +1,13 @@
+<h1> Poules </h1>
+
+<ul>
+  <% @poules.each do |poule| %>
+    <li>
+      <%= link_to poule.number, poule %>
+      <%= link_to "Edit", edit_poule_path(poule) %>
+      <%= link_to "Destroy", poule_path(poule),
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>

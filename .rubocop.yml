@@ -1,0 +1,12 @@
+inherit_gem:
+  rubocop-discourse: default.yml
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - vendor/bundle/**/*
+    - bin/**/*
+    - db/**/*
+
+Style/Documentation:
+  Enabled: false

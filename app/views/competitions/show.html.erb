@@ -1,0 +1,19 @@
+<%= link_to "Competitions", competitions_path %>
+
+<h1> <%= @competition.name%> </h1>
+
+<ul>
+  <li> ID: <%= @competition.id %> </li>
+  <li> name: <%= @competition.name %> </li>
+  <li> location: <%= @competition.location %> </li>
+  <li> date: <%= @competition.date %> </li>
+  <li> gender: <%= @competition.gender %> </li>
+  <li> category: <%= @competition.category %> </li>
+</ul>
+
+<ul>
+  <li> <%= link_to "Edit", edit_competition_path(@competition) %> </li>
+  <li> <%= link_to "Destroy", competition_path(@competition),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %> </li>
+</ul>

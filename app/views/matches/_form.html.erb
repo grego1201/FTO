@@ -1,0 +1,15 @@
+<%= form_with model: match do |form| %>
+  <div>
+    <%= form.label :right_points %>
+    <%= form.number_field :right_points , required: true %>
+  </div>
+
+  <div>
+    <%= form.label :left_points %>
+    <%= form.number_field :left_points , required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,30 @@
+<%= form_with model: fencer do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= form.label :birthday %>
+    <%= form.date_select :birthday %>
+  </div>
+
+  <div>
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div>
+    <%= form.label :gender %>
+    <%= form.select :gender, options_for_select(Fencer::GENDERS, fencer.gender), required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
