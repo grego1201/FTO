@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_095127) do
+ActiveRecord::Schema.define(version: 2021_12_08_142151) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 2021_12_06_095127) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "matches", force: :cascade do |t|
+    t.integer "left_points"
+    t.integer "right_points"
+    t.boolean "priority"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "poule_id"
+    t.bigint "referee_id"
+    t.bigint "right_fencer_id"
+    t.bigint "left_fencer_id"
+    t.index ["left_fencer_id"], name: "index_matches_on_left_fencer_id"
+    t.index ["poule_id"], name: "index_matches_on_poule_id"
+    t.index ["referee_id"], name: "index_matches_on_referee_id"
+    t.index ["right_fencer_id"], name: "index_matches_on_right_fencer_id"
+  end
+
   create_table "poules", force: :cascade do |t|
     t.integer "number"
     t.integer "piste"
@@ -63,4 +79,6 @@ ActiveRecord::Schema.define(version: 2021_12_06_095127) do
 
   add_foreign_key "competitions_fencers", "competitions"
   add_foreign_key "competitions_fencers", "fencers"
+  add_foreign_key "matches", "fencers", column: "left_fencer_id"
+  add_foreign_key "matches", "fencers", column: "right_fencer_id"
 end

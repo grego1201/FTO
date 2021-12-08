@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class CreatePoules < ActiveRecord::Migration[6.1]
   def change
     create_table :poules do |t|

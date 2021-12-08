@@ -32,4 +32,9 @@ RSpec.describe Fencer, type: :model do
     t = described_class.reflect_on_association(:competitions)
     expect(t.macro).to eq(:has_and_belongs_to_many)
   end
+
+  it 'should have many matches' do
+    t = described_class.reflect_on_association(:matches)
+    expect(t.macro).to eq(:has_many)
+  end
 end

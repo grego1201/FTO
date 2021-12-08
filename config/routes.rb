@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :fencers
   resources :referees
   resources :poules
+  resources :matches
 end
